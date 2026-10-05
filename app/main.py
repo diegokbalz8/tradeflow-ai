@@ -72,7 +72,10 @@ def main():
 
             for chunk in selected_sources:
                 print(
-                    f"- {chunk['source_file']} | "
+                    f"- {chunk['document_title']}"
+                )
+                print(
+                    f"  {chunk['institution']} | "
                     f"{chunk['title']}"
                 )
 

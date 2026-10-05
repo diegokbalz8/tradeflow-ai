@@ -74,6 +74,7 @@ def retrieve(question, index, top_k=3):
         results.append({
             "chunk_id": item["chunk_id"],
             "source_file": item["source_file"],
+            "document_title": item["document_title"],
             "source": item["source"],
             "document_type": item["document_type"],
             "institution": item["institution"],

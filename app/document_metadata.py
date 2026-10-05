@@ -1,5 +1,6 @@
 DOCUMENT_METADATA = {
     "IngresoSalida.md": {
+        "title": "Manual de Procedimientos Aduaneros - Ingreso y Salida de Mercancías",
         "document_type": "manual",
         "institution": "Ministerio de Hacienda",
         "status": "vigente",
@@ -7,6 +8,7 @@ DOCUMENT_METADATA = {
     },
 
     "IngresoSalidaMultimodal.md": {
+        "title": "Manual de Procedimientos Aduaneros - Ingreso y Salida de Mercancías por Transporte Multimodal",
         "document_type": "manual",
         "institution": "Ministerio de Hacienda",
         "status": "vigente",
@@ -14,6 +16,7 @@ DOCUMENT_METADATA = {
     },
 
     "Ley_General_Aduanas.md": {
+        "title": "Ley General de Aduanas N.º 7557",    
         "document_type": "law",
         "institution": "Asamblea Legislativa",
         "status": "vigente",
@@ -31,6 +34,7 @@ def get_document_metadata(filename):
     return DOCUMENT_METADATA.get(
         filename,
         {
+            "title": "unknown",
             "document_type": "unknown",
             "institution": "unknown",
             "status": "unknown",

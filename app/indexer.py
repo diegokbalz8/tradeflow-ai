@@ -43,6 +43,7 @@ def load_documents():
         )
 
         for chunk in document_chunks:
+            chunk["document_title"] = metadata["title"]
             chunk["source_file"] = file_path.name
             chunk["document_type"] = metadata["document_type"]
             chunk["institution"] = metadata["institution"]
@@ -72,11 +73,10 @@ def create_index(
         index.append({
             "chunk_id": chunk_id,
             "source_file": chunk["source_file"],
-
+            "document_title": chunk["document_title"],
             "document_type": chunk["document_type"],
             "institution": chunk["institution"],
             "status": chunk["status"],
-
             "source": chunk["source"],
             "level_2": chunk["level_2"],
             "level_3": chunk["level_3"],
