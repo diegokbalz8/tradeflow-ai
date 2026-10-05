@@ -17,6 +17,19 @@ def load_documents():
     chunks = []
 
     for file_path in knowledge_folder.glob("*.md"):
+
+        metadata = get_document_metadata(
+            file_path.name
+        )
+
+        # Ignore files that are not registered
+        # as official TradeFlow knowledge sources.
+        if metadata["document_type"] == "unknown":
+            print(
+                f"Skipping unregistered document: {file_path.name}"
+            )
+            continue
+
         text = load_markdown(file_path)
 
         text = clean_pdf_artifacts(text)
@@ -27,10 +40,6 @@ def load_documents():
             sections,
             max_words=600,
             file_path=file_path
-        )
-
-        metadata = get_document_metadata(
-            file_path.name
         )
 
         for chunk in document_chunks:

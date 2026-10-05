@@ -46,6 +46,7 @@ def main():
             if relevance == "RELEVANT":
 
                 selected_sources = select_sources(
+                    question,
                     retrieved_chunks,
                     max_sources=3
                 )

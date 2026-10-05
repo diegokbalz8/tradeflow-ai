@@ -35,7 +35,7 @@ def extract_article_number(question):
     return None
 
 
-def retrieve(question, index, top_k=5):
+def retrieve(question, index, top_k=3):
     """
     Find the most relevant chunks for a user's question.
     """
@@ -75,6 +75,9 @@ def retrieve(question, index, top_k=5):
             "chunk_id": item["chunk_id"],
             "source_file": item["source_file"],
             "source": item["source"],
+            "document_type": item["document_type"],
+            "institution": item["institution"],
+            "status": item["status"],
             "level_2": item["level_2"],
             "level_3": item["level_3"],
             "level_4": item["level_4"],
@@ -102,13 +105,17 @@ if __name__ == "__main__":
     results = retrieve(
         question,
         index,
-        top_k=5
+        top_k=3
     )
 
     for result in results:
         print("\n--- RESULTADO ---")
         print("Chunk:", result["chunk_id"])
-        print("Fuente:", result["source_file"])
+        print("Archivo:", result["source_file"])
+        print("Tipo:", result["document_type"])
+        print("Institución:", result["institution"])
+        print("Estado:", result["status"])
         print("Título:", result["title"])
         print("Score:", result["score"])
-        print("\n", result["text"])
+        print("\nTexto:")
+        print(result["text"])

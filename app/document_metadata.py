@@ -23,20 +23,6 @@ DOCUMENT_METADATA = {
         "scij_version_id": 131179,
         "version_number": 11,
         "version_total": 11
-    },
-
-    "customs.md": {
-        "document_type": "general",
-        "institution": "unknown",
-        "status": "unknown",
-        "source": "unknown"
-    },
-
-    "documentation.md": {
-        "document_type": "general",
-        "institution": "unknown",
-        "status": "unknown",
-        "source": "unknown"
     }
 }
 
