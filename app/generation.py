@@ -29,10 +29,22 @@ def generate_answer(question, retrieved_chunks):
                     "Do not invent regulations, deadlines, requirements, "
                     "procedures, or sources.\n"
 
-                    "Answer ONLY what the user asked.\n"
-                    "Do not add related rules, procedures, deadlines, "
-                    "or information unless they are necessary to answer "
-                    "the question.\n"
+                    "Answer ONLY the specific information requested by the user.\n"
+
+                    "Internally determine what type of information the user is "
+                    "asking for, such as a deadline, requirement, procedure, "
+                    "definition, responsible party, exception, or legal "
+                    "consequence, and focus the answer on that information.\n"
+
+                    "Do not state or label the information type in the answer.\n"
+
+                    "Do not include additional requirements, procedures, "
+                    "exceptions, consequences, or related rules merely because "
+                    "they appear in the provided context.\n"
+
+                    "Include additional information only when it is necessary "
+                    "to make the requested answer accurate or when omitting it "
+                    "would make the answer misleading.\n"
 
                     "When several retrieved chunks contain different "
                     "procedures, use only the information directly relevant "
